@@ -42,14 +42,14 @@
             console.log(`Draw. Human score equals to ${humanScore}, computer score equals to ${computerScore}`)
         }
     }
-
     function playGame() {
-        playRound(getHumanChoice(), getComputerChoice());
-        playRound(getHumanChoice(), getComputerChoice());
-        playRound(getHumanChoice(), getComputerChoice());
-        playRound(getHumanChoice(), getComputerChoice());
-        playRound(getHumanChoice(), getComputerChoice());
         
+        playRound(getHumanChoice(), getComputerChoice());
+        playRound(getHumanChoice(), getComputerChoice());
+        playRound(getHumanChoice(), getComputerChoice());
+        playRound(getHumanChoice(), getComputerChoice());
+        playRound(getHumanChoice(), getComputerChoice());
+
         if (humanScore > computerScore) {
             console.log(`You won da game!!  Human score equals to ${humanScore}, computer score equals to ${computerScore}`);
         } else if (humanScore == computerScore) {
@@ -59,7 +59,7 @@
         }
     }
 
-
+    playGame();
 
 
 
