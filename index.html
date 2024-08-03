@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+    function getComputerChoice() {
+        let random = Math.random();
+        if (random < 0.33) {
+            return "rock";
+        } else if (random > 0.66) {
+            return "paper";
+        } else {
+            return "scissors";
+        }
+    }
+    function getHumanChoice() {
+        let answer = prompt("your move").toLowerCase();
+        return answer;
+    }
+
+    let humanScore = 0;
+    let computerScore = 0;
+
+
+    function playRound(humanChoice, computerChoice) {
+        if (humanChoice == "rock" && computerChoice == "scissors" || humanChoice == "scissors" && computerChoice == "paper" || humanChoice == "paper" && computerChoice == "rock") {
+            humanScore++;
+            console.log(`You won! ${humanChoice} beats ${computerChoice}. Human score equals to ${humanScore}, computer score equals to ${computerScore}`);
+            
+        } else if (humanChoice == "rock" && computerChoice == "paper" || humanChoice == "scissors" && computerChoice == "rock" || humanChoice == "paper" && computerChoice == "scissors") {
+            computerScore++;
+            console.log(`You lost! ${computerChoice} beats ${humanChoice}. Human score equals to ${humanScore}, computer score equals to ${computerScore}`);
+            
+        } else {
+            computerScore = computerScore + 0.5;
+            humanScore = humanScore + 0.5;
+            console.log(`Draw. Human score equals to ${humanScore}, computer score equals to ${computerScore}`)
+        }
+    }
+
+    function playGame() {
+        playRound(getHumanChoice(), getComputerChoice());
+        playRound(getHumanChoice(), getComputerChoice());
+        playRound(getHumanChoice(), getComputerChoice());
+        playRound(getHumanChoice(), getComputerChoice());
+        playRound(getHumanChoice(), getComputerChoice());
+        
+        if (humanScore > computerScore) {
+            console.log(`You won da game!!  Human score equals to ${humanScore}, computer score equals to ${computerScore}`);
+        } else if (humanScore == computerScore) {
+            console.log(`Absolutely a draw. Human score equals to ${humanScore}, computer score equals to ${computerScore}`);
+        } else {
+            console.log(`You lost da game!!  Human score equals to ${humanScore}, computer score equals to ${computerScore}`);
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
